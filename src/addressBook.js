@@ -171,3 +171,37 @@ const deleteContact=(personName)=>{
     console.log(personName+" not found in Address Book ")
 
 }
+
+const display=()=>console.log(addressBookArray)
+
+let flag=true
+while(flag){
+    console.log("1.Add Contact\n2.Display AddressBook\n3.Edit Contact\n4.Delete Contact\n5.exit")
+
+    switch(Number(prompt("enter your choice "))){
+        case 1:{
+            addContact()
+            break
+        }
+        case 2:{
+            display()
+            break
+        }
+        case 3:{
+            editContact(prompt("enter the first name of the contact you wnat to edit"))
+            break
+        }
+        case 4:{
+            deleteContact(prompt("enter the first name of the contact you wnat to delete"))
+            break
+        }
+        case 5:{
+            flag=false
+            break
+        }
+        default:{
+            flag=false
+            break
+        }
+    }
+}
