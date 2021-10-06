@@ -104,4 +104,59 @@ const addContact=()=>{
     console.log("inserted contact")
     console.log(contact)
 }
-addContact()
+
+const editContact=(personName)=>{
+    for(i=0;i<addressBookArray.length;i++){
+        if(addressBookArray[i].firstName==personName){
+            let flag=true
+            while(flag){
+                console.log("1.FirstName\n2.LastName\n3.Address\n4.City\n5.State\n6.Zip\n7.Mobile no.\n8.Email\n9.Done Editing")
+                switch(Number(prompt("Enter your choice"))){
+                    case 1:{
+                        addressBookArray[i].firstName=getfirstname()
+                        break
+                    }
+                    case 2:{
+                        addressBookArray[i].lastName=getlastname()
+                        break
+                    }
+                    case 3:{
+                        addressBookArray[i].address=getaddress()
+                        break
+                    }
+                    case 4:{
+                        addressBookArray[i].city=getcity()
+                        break
+                    }
+                    case 5:{
+                        addressBookArray[i].state=getstate()
+                        break
+                    }
+                    case 6:{
+                        addressBookArray[i].zip=getzip()
+                        break
+                    }
+                    case 7:{
+                        addressBookArray[i].phoneNo=getphoneNo()
+                        break
+                    }
+                    case 8:{
+                        addressBookArray[i].email=getemail()
+                        break
+                    }
+                    case 9:{
+                        flag=false
+                        break
+                    }
+                    default:{
+                        flag=false
+                        break
+                    }
+                }
+            }
+            console.log("saved edits")
+            break
+        }
+    }
+    
+}
