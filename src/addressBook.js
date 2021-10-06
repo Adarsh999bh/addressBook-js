@@ -160,3 +160,14 @@ const editContact=(personName)=>{
     }
     
 }
+const deleteContact=(personName)=>{
+    for(i=0;i<addressBookArray.length;i++){
+        if(addressBookArray[i].firstName==personName){
+            addressBookArray.splice(i,1)
+            console.log("Deleted contact successfully")
+            return
+        }
+    }
+    console.log(personName+" not found in Address Book ")
+
+}
